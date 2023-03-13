@@ -1,7 +1,14 @@
 import * as React from 'react';
 import {Avatar, Button, Card, Text} from 'react-native-paper';
-import {Image, TouchableOpacity, StyleSheet, View} from 'react-native';
+import {
+  Image,
+  TouchableOpacity,
+  ImageBackground,
+  StyleSheet,
+  View,
+} from 'react-native';
 import Swiper from 'react-native-swiper';
+
 const Featured = () => (
   <>
     <Card>
@@ -24,6 +31,12 @@ const Featured = () => (
       // autoplayTimeout={50000}
     >
       <View style={styles.slide1}>
+        <Image
+          source={require('../../assets/bbq.jpg')}
+          style={styles.slideImage}
+        />
+        <Text>Inside</Text>
+
         <Text style={styles.text}>Hello Swiper</Text>
       </View>
       <View style={styles.slide2}>
@@ -40,10 +53,15 @@ const styles = StyleSheet.create({
     height: 200,
   },
   slide1: {
+    backgroundColor: '#9DD6EB',
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#9DD6EB',
+  },
+  slideImage: {
+    height: '100%',
+    width: '100%',
+    resizeMode: 'contain',
   },
   slide2: {
     flex: 1,
@@ -55,7 +73,6 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#92BBD9',
   },
   text: {
     color: '#fff',
